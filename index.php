@@ -99,15 +99,24 @@
         }
 
         .form_column {
+<<<<<<< HEAD
             width: 20rem;
 
             flex: 1;
             padding: 10px;
+=======
+            flex: 1;
+            padding: 20px;
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
             text-align: center;
         }
 
         .form_column img {
             width: 200px;
+<<<<<<< HEAD
+=======
+            filter: drop-shadow(2px 2px 2px black);
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
         }
 
         /* Fin du CSS de la page */
@@ -134,17 +143,29 @@
     <main>
         <form action="#" method="get">
             <!-- Main content : the character builder -->
+<<<<<<< HEAD
+=======
+            <!-- RACE AND SIZES -->
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
             <div class="subtitle_container">
                 <h1>CHARACTER <a href="#">RACE AND SIZES</a></h1>
             </div>
 
             <div class="form_container">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
                 <div class="form_column">
                     <img id="raceMugshot" src="./img/charamugshots/unknow.png" alt="unknow">
                     <br><br>
                     <label for="select">Race : </label>
                     <select id="select" name="select">
+<<<<<<< HEAD
                         <option value="unknow">Select a race</option> 
+=======
+                        <option value="unknow">Select a race</option>
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
                         <option value="m_saiyan">Saiyan (M)</option>
                         <option value="f_saiyan">Saiyan (F)</option>
                         <option value="m_human">Human (M)</option>
@@ -154,6 +175,7 @@
                         <option value="frieza">Frieza</option>
                         <option value="namek">Namek</option>
                     </select>
+<<<<<<< HEAD
                     
     <script>
         const selectElement = document.getElementById('select');
@@ -166,13 +188,35 @@
         });
     </script>
                 </div>
+=======
+
+                    <script>
+                        const selectElement = document.getElementById('select');
+                        const imageElement = document.getElementById('raceMugshot');
+
+                        selectElement.addEventListener('change', function () {
+                            const selectedRace = selectElement.value;
+                            const imagePath = `./img/charamugshots/${selectedRace}.png`;
+                            imageElement.src = imagePath;
+                        });
+                    </script>
+
+                </div>
+
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
                 <div class="form_column">
                     <label for="text">Build name : </label>
                     <input type="text" id="text" name="text">
                     <br><br>
                     <label for="attaque">Level :</label>
+<<<<<<< HEAD
                     <input type="number" id="level">
                 </div>
+=======
+                    <input type="number" id="level" min="0" max="120">
+                </div>
+
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
                 <div class="form_column">
                     <label for="select">Weight : </label>
                     <select id="select" name="select">
@@ -189,6 +233,7 @@
                         <option value="Tallest">Tallest</option>
                     </select>
                 </div>
+<<<<<<< HEAD
             </div>
 
             <div class="subtitle_container">
@@ -196,6 +241,31 @@
             </div>
 
             <div class="form_container">
+=======
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const levelInput = document.getElementById('level');
+                        const apDisplay = document.getElementById('ap_display');
+
+                        levelInput.addEventListener('input', function () {
+                            const level = parseInt(levelInput.value);
+                            const APs = 422 / 120 * level;
+                            apDisplay.textContent = APs.toFixed(2);
+                        });
+                    });
+                </script>
+
+            </div>
+
+            <!-- ATTRIBUTE POINTS -->
+            <div class="subtitle_container">
+                <h1><span id="ap_display">0</span> <a href="#">ATTRIBUTE POINTS</a> LEFT</h1>
+            </div>
+
+            <div class="form_container">
+
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
                 <div class="form_column">
                     <label for="attaque">Health :</label>
                     <input type="number" id="health">
@@ -206,6 +276,10 @@
                     <label for="defense">Stamina :</label>
                     <input type="number" id="stamina">
                 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
                 <div class="form_column">
                     <label for="attaque">Basic Attack :</label>
                     <input type="number" id="basicattack">
@@ -216,6 +290,113 @@
                     <label for="defense">Super Kikohas :</label>
                     <input type="number" id="suprekikohas">
                 </div>
+<<<<<<< HEAD
+=======
+
+            </div>
+
+            <!-- QQBANG & SUPER SOULD -->
+            <div class="subtitle_container">
+                <h1><a href="#">QQBANG</a> & <a href="#">SUPER SOULD</a></h1>
+            </div>
+
+            <div class="form_container">
+
+                <div class="form_column">
+                    <label for="select">Health :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Ki :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Stamina :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                </div>
+
+                <div class="form_column">
+                    <label for="select">Basic Attack :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Super Strike :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Super Kikohas :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                </div>
+
+>>>>>>> 9121b97f8ca3dd6e57169c7dbc6c2dda0513db93
             </div>
         </form>
     </main>
