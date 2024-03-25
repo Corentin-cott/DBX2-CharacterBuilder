@@ -8,6 +8,16 @@
             margin: 0;
         }
 
+        @font-face {
+            font-family: 'Saiyan Sans';
+            src: url('./fonts/Saiyan-Sans Right Oblique.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Haettenschweiler';
+            src: url('./fonts/Haettenschweiler-Regular.ttf') format('truetype');
+        }
+
         header {
             letter-spacing: 0.1em;
         }
@@ -16,8 +26,22 @@
             background-color: #333;
             text-align: center;
             padding: 1.4em;
+            font-family: 'Arial', Arial, sans-serif;
             color: white;
             font-size: 2.2em;
+        }
+
+        .subtitle_container {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            font-family: 'Arial', Arial, sans-serif;
+        }
+
+        .subsubtitle_container {
+            text-align: center;
+            padding: 1em;
         }
 
         .menu_container {
@@ -33,6 +57,7 @@
             transform: translateY(-50%);
             padding: 0.4em;
             width: 26em;
+            font-family: 'Haettenschweiler', Arial, sans-serif;
             font-size: 2em;
         }
 
@@ -45,18 +70,13 @@
             color: darkorange;
         }
 
-        main {
+        .character_builder {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0;
             font-family: Arial, sans-serif;
             color: #333;
-        }
-
-        .subtitle_container {
-            text-align: center;
-            padding: 1em;
         }
 
         .form_container {
@@ -94,8 +114,9 @@
     </header>
 
     <main>
+        <div class="character_builder">
         <form action="#" method="get">
-            <div class="subtitle_container">
+            <div class="subsubtitle_container">
                 <h1>CHARACTER <a href="#">RACE AND SIZES</a></h1>
             </div>
 
@@ -104,7 +125,7 @@
                     <img id="raceMugshot" src="./img/charamugshots/unknow.png" alt="unknow">
                     <br><br>
                     <label for="select">Race : </label>
-                    <select id="select" name="select">
+                    <select id="raceSelect" name="select">
                         <option value="unknow">Select a race</option>
                         <option value="m_saiyan">Saiyan (M)</option>
                         <option value="f_saiyan">Saiyan (F)</option>
@@ -116,6 +137,15 @@
                         <option value="namek">Namek</option>
                     </select>
                 </div>
+
+                <script>
+                    const raceSelect = document.getElementById('raceSelect');
+                    const raceMugshot = document.getElementById('raceMugshot');
+
+                    raceSelect.addEventListener('change', function () {
+                        raceMugshot.src = `./img/charamugshots/${raceSelect.value}.png`;
+                    });
+                </script>
 
                 <div class="form_column">
                     <label for="text">Build name : </label>
@@ -143,7 +173,20 @@
                 </div>
             </div>
 
-            <div class="subtitle_container">
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const levelInput = document.getElementById('level');
+                    const apDisplay = document.getElementById('ap_display');
+
+                    levelInput.addEventListener('input', function () {
+                        const level = parseInt(levelInput.value);
+                        const APs = 422 / 120 * level;
+                        apDisplay.textContent = APs.toFixed(2);
+                    });
+                });
+            </script>
+
+            <div class="subsubtitle_container">
                 <h1><span id="ap_display">0</span> <a href="#">ATTRIBUTE POINTS</a> LEFT</h1>
             </div>
 
@@ -170,7 +213,121 @@
                     <input type="number" id="suprekikohas">
                 </div>
             </div>
+            
+            <div class="subsubtitle_container">
+                <h1><a href="#">QQBANG</a> & <a href="#">SUPER SOUL</a></h1>
+            </div>
+
+            <div class="form_container">
+                <div class="form_column">
+                    <label for="select">Health :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Ki :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Stamina :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                </div>
+
+                <div class="form_column">
+                    <label for="select">Basic Attack :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Super Strike :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Super Kikohas :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                </div>
+                
+                <div class="form_column">
+                    <label for="select">Super Soul :</label>
+                    <select id="select" name="select">
+                        <option value="none">(Super soul is not supported yet.)</option>
+                    </select>
+                </div>
+
+            </div> 
         </form>
+        </div>
+        
+        <br><br>
+        <div class="subtitle_container">
+            <h1>YOUR CHARACTER'S STATS!</h1>
+        </div>
     </main>
 
 </body>
