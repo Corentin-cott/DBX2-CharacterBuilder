@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBX2 - CHARACTER BUILDER</title>
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <!-- Header content -->
+        <h1>DBX2 - CHARACTER BUILDER</h1>
+        <div class="menu_container">
+            <p class="menu">
+                <a href="#">BUILDER</a> •
+                <a href="#">SKILLS LIST</a> •
+                <a href="#">FIND PLAYERS</a> •
+                <a href="#">ABOUT THIS SITE</a>
+            </p>
+        </div>
+        <!-- End of Header content -->
+    </header>
+
+    <main>
+        <!-- Main content -->
+        <!-- Character Name & Apparence -->
+        <div class="CharacterBuilder">
+            <div class="NameApparence">
+                <h2>NAME AND APPERANCE</h2>
+                <!-- Columns -->
+                <div class="ColumnsContainer">
+                    <!-- First Column : Race Select -->
+                    <div class="Column">
+                        <img id="raceMugshot" src="./img/charamugshots/unknow.png" alt="unknow">
+                        <br>
+                        <label for="race">Race : </label>
+                        <select id="raceSelect" name="select">
+                            <option value="unknow">Select a race</option>
+                            <option value="m_saiyan">Saiyan (M)</option>
+                            <option value="f_saiyan">Saiyan (F)</option>
+                            <option value="m_human">Human (M)</option>
+                            <option value="f_human">Human (F)</option>
+                            <option value="m_majin">Majin (M)</option>
+                            <option value="f_majin">Majin (F)</option>
+                            <option value="frieza">Frieza</option>
+                            <option value="namek">Namek</option>
+                        </select>
+                    </div>
+                    <script>
+                        const raceSelect = document.getElementById('raceSelect');
+                        const raceMugshot = document.getElementById('raceMugshot');
+    
+                        raceSelect.addEventListener('change', function () {
+                            raceMugshot.src = `./img/charamugshots/${raceSelect.value}.png`;
+                        });
+                    </script>
+                    <!-- End of First Column -->
+                    <br>
+                    <!-- Second Column : Height & Weight -->
+                    <div class="Column">
+                        <label for="weight">Weight : </label>
+                        <select id="weight" name="select">
+                            <option value="Thin">Thin</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Thick">Thick</option>
+                        </select>
+                        <br><br>
+                        <label for="height">Height : </label>
+                        <select id="height" name="select">
+                            <option value="Shortest">Shortest</option>
+                            <option value="Short">Short</option>
+                            <option value="Tall">Tall</option>
+                            <option value="Tallest">Tallest</option>
+                        </select>
+                    </div>
+                    <!-- End of Second Column -->
+                    <br>
+                    <!-- Third Column : Name & Level -->
+                    <div class="Column">
+                        <label for="name">Name : </label>
+                        <input type="text" id="name" name="name" placeholder="Character Name">
+                        <br><br>
+                        <label for="level">Level : </label>
+                        <input type="number" id="level" name="level" value="1" min="1" max="120">
+                    </div>
+                    <!-- End of Third Column -->
+                </div>
+            </div>
+            <!-- End of Character Name & Apparence -->
+            <br>
+            <!-- Character Stats -->
+            <div class="Stats">
+                <h2>STATISTICS (<span>0</span> AP LEFT)</h2>
+                <!-- Columns -->
+                <div class="ColumnsContainer">
+                    <!-- First Column : Health & Ki -->
+                    <div class="Column">
+                        <label for="health">Health : </label>
+                        <input type="number" id="health" name="health" value="0" min="0" max="200">
+                        <br><br>
+                        <label for="ki">Ki : </label>
+                        <input type="number" id="ki" name="ki" value="0" min="0" max="200">
+                    </div>
+                    <!-- End of First Column -->
+                    <br>
+                    <!-- Second Column : Stamina & Basic Attack -->
+                    <div class="Column">
+                        <label for="stamina">Stamina : </label>
+                        <input type="number" id="stamina" name="stamina" value="0" min="500" max="200">
+                        <br><br>
+                        <label for="basicAttack">Basic Attack : </label>
+                        <input type="number" id="basicAttack" name="basicAttack" value="0" min="500" max="200">
+                    </div>
+                    <!-- End of Second Column -->
+                    <br>
+                    <!-- Third Column : Ki Blast Supers & Strike Supers -->
+                    <div class="Column">
+                        <label for="kiBlastSupers">Ki Blast Supers : </label>
+                        <input type="number" id="kiBlastSupers" name="kiBlastSupers" value="0" min="0" max="200">
+                        <br><br>
+                        <label for="strikeSupers">Strike Supers : </label>
+                        <input type="number" id="strikeSupers" name="strikeSupers" value="0" min="0" max="200">
+                    </div>
+                    <!-- End of Third Column -->
+                </div>
+            </div>
+            <!-- End of Character Stats -->
+            <br>
+            <!-- Character QQ Bang & Super Souls -->
+            <div class="QQBangSuperSoul">
+                <h2>QQ BANG & SUPER SOUL</h2>
+                <!-- Columns -->
+                <div class="ColumnsContainer">
+                    <!-- First Column : QQ Bang : Health & Ki -->
+                    <div class="Columns">
+                        <label for="select">Health :</label>
+                        <select id="select" name="select">
+                            <option value="-5"><<<<<</option>
+                            <option value="-4"><<<<</option>
+                            <option value="-3"><<<</option>
+                            <option value="-2"><<</option>
+                            <option value="-1"><</option>
+                            <option value="0" selected>-</option>
+                            <option value="1">></option>
+                            <option value="2">>></option>
+                            <option value="3">>>></option>
+                            <option value="4">>>>></option>
+                            <option value="5">>>>>></option>
+                        </select>
+                        <br><br>
+                        <label for="select">Ki :</label>
+                        <select id="select" name="select">
+                            <option value="-5"><<<<<</option>
+                            <option value="-4"><<<<</option>
+                            <option value="-3"><<<</option>
+                            <option value="-2"><<</option>
+                            <option value="-1"><</option>
+                            <option value="0" selected>-</option>
+                            <option value="1">></option>
+                            <option value="2">>></option>
+                            <option value="3">>>></option>
+                            <option value="4">>>>></option>
+                            <option value="5">>>>>></option>
+                        </select>
+                    </div>
+                    <!-- End of First Column -->
+                    <br>
+                    <!-- Second Column : QQ Bang : Stamina & Basic Attack -->
+                    <div class="Columns">
+                        <label for="select">Stamina :</label>
+                        <select id="select" name="select">
+                            <option value="-5"><<<<<</option>
+                            <option value="-4"><<<<</option>
+                            <option value="-3"><<<</option>
+                            <option value="-2"><<</option>
+                            <option value="-1"><</option>
+                            <option value="0" selected>-</option>
+                            <option value="1">></option>
+                            <option value="2">>></option>
+                            <option value="3">>>></option>
+                            <option value="4">>>>></option>
+                            <option value="5">>>>>></option>
+                        </select>
+                        <br><br>
+                        <label for="select">Basic Attack :</label>
+                        <select id="select" name="select">
+                            <option value="-5"><<<<<</option>
+                            <option value="-4"><<<<</option>
+                            <option value="-3"><<<</option>
+                            <option value="-2"><<</option>
+                            <option value="-1"><</option>
+                            <option value="0" selected>-</option>
+                            <option value="1">></option>
+                            <option value="2">>></option>
+                            <option value="3">>>></option>
+                            <option value="4">>>>></option>
+                            <option value="5">>>>>></option>
+                        </select>
+                    </div>
+                    <!-- End of Second Column -->
+                    <br>
+                    <!-- Third Column : QQ Bang : Ki Blast Supers & Strike Supers -->
+                    <div class="Columns">
+                        <label for="select">Ki Blast Supers :</label>
+                        <select id="select" name="select">
+                            <option value="-5"><<<<<</option>
+                            <option value="-4"><<<<</option>
+                            <option value="-3"><<<</option>
+                            <option value="-2"><<</option>
+                            <option value="-1"><</option>
+                            <option value="0" selected>-</option>
+                            <option value="1">></option>
+                            <option value="2">>></option>
+                            <option value="3">>>></option>
+                            <option value="4">>>>></option>
+                            <option value="5">>>>>></option>
+                        </select>
+                        <br><br>
+                        <label for="select">Strike Supers :</label>
+                        <select id="select" name="select">
+                            <option value="-5"><<<<<</option>
+                            <option value="-4"><<<<</option>
+                            <option value="-3"><<<</option>
+                            <option value="-2"><<</option>
+                            <option value="-1"><</option>
+                            <option value="0" selected>-</option>
+                            <option value="1">></option>
+                            <option value="2">>></option>
+                            <option value="3">>>></option>
+                            <option value="4">>>>></option>
+                            <option value="5">>>>>></option>
+                        </select>
+                    </div>
+                    <!-- End of Third Column -->
+                </div>
+                <br><br>
+                <!-- Columns -->
+                <div class="ColumnsContainer">
+                    <!-- First Column : Super Soul -->
+                    <div class="Columns">
+                        <label for="select">Super Soul :</label>
+                        <select id="select" name="select">
+                            <option value="none">(Super soul is not supported yet.)</option>
+                        </select>
+                    </div>
+                    <!-- End of First Column -->
+                </div>
+            </div>
+            <!-- End of Character QQ Bang & Super Souls -->
+        </div>
+        <!-- End of Character builder -->
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+        <!-- End of Footer Content-->
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- Old code
+                <div class="form_container">
+                <div class="form_column">
+                    <label for="select">Health :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Ki :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Stamina :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                </div>
+
+                <div class="form_column">
+                    <label for="select">Basic Attack :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Super Strike :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                    <br><br>
+                    <label for="select">Super Kikohas :</label>
+                    <select id="select" name="select">
+                        <option value="-5"><<<<<</option>
+                        <option value="-4"><<<<</option>
+                        <option value="-3"><<<</option>
+                        <option value="-2"><<</option>
+                        <option value="-1"><</option>
+                        <option value="0" selected>-</option>
+                        <option value="1">></option>
+                        <option value="2">>></option>
+                        <option value="3">>>></option>
+                        <option value="4">>>>></option>
+                        <option value="5">>>>>></option>
+                    </select>
+                </div>
+                
+                <div class="form_column">
+                    <label for="select">Super Soul :</label>
+                    <select id="select" name="select">
+                        <option value="none">(Super soul is not supported yet.)</option>
+                    </select>
+                </div>
+            -->

@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Saiyan Sans';
+    src: url('./fonts/Saiyan-Sans Right Oblique.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Haettenschweiler';
+    src: url('./fonts/Haettenschweiler-Regular.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+}
+
+/* CSS for the header */
+header h1 {
+    background-color: #333;
+    padding: 1em;
+    margin: 0;
+
+    text-align: center;
+    font-family: 'Arial', Arial, sans-serif;
+    font-size: 4rem;
+    color: white;
+}
+@media screen and (max-width: 1100px) {
+    header h1 {
+        font-size: 6vw;
+    }
+}
+
+.menu_container {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%);
+    padding-top: 0.4em; padding-bottom: 0.4em;
+    padding-left: 0.8em; padding-right: 0.8em;
+    margin: 0;
+    
+    text-align: center;
+    font-family: 'Haettenschweiler', Arial, sans-serif;
+    font-size: 2.4rem;
+    color: #333;
+}
+@media screen and (max-width: 1100px) {
+    .menu {
+        width: 100%;
+        transform: translateY(0%);
+        font-size: 1.2rem;
+    }
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkorange;
+}
+/* End of CSS for the header */
+
+h2 {
+    text-align: center;
+    font-family: 'Haettenschweiler', Arial, sans-serif;
+    font-size: 4rem;
+    color: #333;
+
+    background-image: linear-gradient(to right, #333 50%, darkorange);
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+}
+@media screen and (max-width: 1100px) {
+    h2 {
+        font-size: 2.2rem;
+        font-weight: normal;
+    }
+}
+
+.ColumnsContainer {
+    margin-left: 20%; margin-right: 20%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@media screen and (max-width: 1100px) {
+    .ColumnsContainer {
+        display: block;
+        align-items: center;
+    }
+}
+
+.Column {
+    max-width: 40%;
+
+    text-align: center;
+    font-family: 'Arial', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+}
+@media screen and (max-width: 1100px) {
+    .Column {
+        max-width: 100%;
+    }
+}
+
+img {
+    width: 200px;
+    filter: drop-shadow(2px 2px 2px black);
+}
