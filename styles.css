@@ -13,18 +13,18 @@ body {
 }
 
 /* CSS for the header */
-header h1 {
+h1 {
     background-color: #333;
     padding: 1em;
     margin: 0;
 
     text-align: center;
     font-family: 'Arial', Arial, sans-serif;
-    font-size: 4rem;
+    font-size: 5rem;
     color: white;
 }
-@media screen and (max-width: 1100px) {
-    header h1 {
+@media screen and (max-width: 800px) {
+    h1 {
         font-size: 6vw;
     }
 }
@@ -47,7 +47,7 @@ header h1 {
     font-size: 2.4rem;
     color: #333;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 800px) {
     .menu {
         width: 100%;
         transform: translateY(0%);
@@ -55,33 +55,58 @@ header h1 {
     }
 }
 
-a {
+.menu a {
     color: #333;
     text-decoration: none;
 }
 
-a:hover {
+.menu a:hover {
     color: darkorange;
 }
 /* End of CSS for the header */
 
-h2 {
+/* CSS for the main content */
+main, .CharacterBuilder {
+    padding-bottom: 4.5rem;
+}
+@media screen and (max-width: 800px) {
+    main, .CharacterBuilder, .CharacterFinalStats {
+        padding-bottom: 2.2rem;
+    }
+}
+
+h3 {
     text-align: center;
     font-family: 'Haettenschweiler', Arial, sans-serif;
     font-size: 4rem;
     color: #333;
 
-    background-image: linear-gradient(to right, #333 50%, darkorange);
+    background-image: linear-gradient(to right, #333 40%, darkorange);
     background-size: cover;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-
 }
-@media screen and (max-width: 1100px) {
-    h2 {
+@media screen and (max-width: 800px) {
+    h3 {
         font-size: 2.2rem;
         font-weight: normal;
+    }
+}
+
+h2 {
+    background-color: #333;
+    padding: 1em;
+    margin: 0;
+
+    text-align: center;
+    font-family: 'Arial', Arial, sans-serif;
+    font-size: 2.4rem;
+    color: white;
+}
+@media screen and (max-width: 800px) {
+    h2 {
+        font-size: 5vw;
     }
 }
 
@@ -92,7 +117,7 @@ h2 {
     justify-content: space-around;
     align-items: center;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 800px) {
     .ColumnsContainer {
         display: block;
         align-items: center;
@@ -107,7 +132,7 @@ h2 {
     font-size: 1.2rem;
     color: #333;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 800px) {
     .Column {
         max-width: 100%;
     }
@@ -117,3 +142,16 @@ img {
     width: 200px;
     filter: drop-shadow(2px 2px 2px black);
 }
+/* End of CSS for the main content */
+
+/* CSS for the footer */
+.grayfotter {
+    background-color: #333;
+    padding: 3em;
+}
+
+footer .menu {
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(50%);
+}
+/* End of CSS for the footer */
