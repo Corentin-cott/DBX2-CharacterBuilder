@@ -81,7 +81,7 @@ h3 {
     font-size: 4rem;
     color: #333;
 
-    background-image: linear-gradient(to right, #333 40%, darkorange);
+    background-image: linear-gradient(to right, #333 50%, darkorange);
     background-size: cover;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -49,14 +49,6 @@
                             <option value="namek">Namek</option>
                         </select>
                     </div>
-                    <script>
-                        const raceSelect = document.getElementById('raceSelect');
-                        const raceMugshot = document.getElementById('raceMugshot');
-    
-                        raceSelect.addEventListener('change', function () {
-                            raceMugshot.src = `./img/charamugshots/${raceSelect.value}.png`;
-                        });
-                    </script>
                     <!-- End of First Column -->
                     <br>
                     <!-- Second Column : Height & Weight -->
@@ -93,7 +85,7 @@
             <br>
             <!-- Character Attributes -->
             <div class="Attributes">
-                <h3>STATISTICS (<span>0</span> AP LEFT)</h3>
+                <h3>STATISTICS (<span class="ApsAvailable">0</span>/<span class="ApsTotal">0</span> AP LEFT)</h3>
                 <!-- Columns -->
                 <div class="ColumnsContainer">
                     <!-- First Column : Health & Ki -->
@@ -109,10 +101,10 @@
                     <!-- Second Column : Stamina & Basic Attack -->
                     <div class="Column">
                         <label for="stamina">Stamina : </label>
-                        <input type="number" id="stamina" name="stamina" value="0" min="500" max="200">
+                        <input type="number" id="stamina" name="stamina" value="0" min="0" max="200">
                         <br><br>
                         <label for="basicAttack">Basic Attack : </label>
-                        <input type="number" id="basicAttack" name="basicAttack" value="0" min="500" max="200">
+                        <input type="number" id="basicAttack" name="basicAttack" value="0" min="0" max="200">
                     </div>
                     <!-- End of Second Column -->
                     <br>
@@ -243,7 +235,7 @@
                     <div class="Column">
                         <label for="select">Super Soul :</label>
                         <select id="select" name="select">
-                            <option value="none">(Super soul is not supported yet.)</option>
+                            <option value="none">(WIP)</option>
                         </select>
                     </div>
                     <!-- End of First Column -->
@@ -255,9 +247,12 @@
         <!-- Character Stats Results -->
         <h2>↓ <span>CHARANAME</span> CHARACTER STATS ↓</h2>
         <div class="CharacterFinalStats">
+            <!-- Statistic -->
             <div class="CharacterStatsPrint">
                 <h3>STATISTICS</h3>
+                <!-- Columns -->
                 <div class="ColumnsContainer">
+                    <!-- First Column : Health & Ki -->
                     <div class="Column">
                         <label for="health">Health : </label>
                         <input type="number" id="health" name="health" value="0" min="0" max="200" disabled>
@@ -266,6 +261,8 @@
                         <input type="number" id="ki" name="ki" value="0" min="0" max="200" disabled>
                     </div>
                     <br>
+                    <!-- End of First Column -->
+                    <!-- Second Column : Stamina & Basic Attack -->
                     <div class="Column">
                         <label for="stamina">Stamina : </label>
                         <input type="number" id="stamina" name="stamina" value="0" min="500" max="200" disabled>
@@ -274,6 +271,8 @@
                         <input type="number" id="basicAttack" name="basicAttack" value="0" min="500" max="200" disabled>
                     </div>
                     <br>
+                    <!-- End of Second Column -->
+                    <!-- Third Column : Ki Blast Supers & Strike Supers -->
                     <div class="Column">
                         <label for="kiBlastSupers">Ki Blast Supers : </label>
                         <input type="number" id="kiBlastSupers" name="kiBlastSupers" value="0" min="0" max="200" disabled>
@@ -281,12 +280,111 @@
                         <label for="strikeSupers">Strike Supers : </label>
                         <input type="number" id="strikeSupers" name="strikeSupers" value="0" min="0" max="200" disabled>
                     </div>
+                    <!-- End of Third Column -->
                 </div>
             </div>
+            <!-- End of Statistic -->
+            <!-- Bars Visual -->
             <div class="CharacterStatsVisual">
                 <h3>BARS VISUAL</h3>
+                <!-- Columns -->
+                <div class="ColumnsContainer">
+                    <!-- First Column -->
+                    <div class="Column">
+                        <p>WIP</p>
+                    </div>
+                    <!-- End of First Column -->
+                </div>
             </div>
+            </div>
+            <!-- End of Bars Visual -->
+            <!-- Damage w/ certain skills -->
+            <div class="CharacterStatsDamage">
+                <h3>DAMAGE W/ CERTAIN SKILLS</h3>
+                <!-- Columns -->
+                <div class="ColumnsContainer">
+                    <!-- First Column -->
+                    <div class="Column">
+                        <p>Remember that the damages are approximate and can still vary. (ex: Saiyan zenkai boost, etc.)</p>
+                    </div>
+                    <!-- End of First Column -->
+                </div>
+                <!-- Columns -->
+                <div class="ColumnsContainer">
+                    <!-- First Column -->
+                    <div class="Column">
+                        <p>WIP</p>
+                    </div>
+                    <!-- End of First Column -->
+                </div>
+            </div>
+            <!-- End of Damage w/ certain skills -->
         </div>
+        <!-- End of Character Stats Results -->
+
+        <!-- Script JS -->
+        <script>
+            // In cas of refresh, update total points
+            document.addEventListener('DOMContentLoaded', updateTotalPoints);
+
+            // Character Mugshots Script
+            const raceSelect = document.getElementById('raceSelect');
+            const raceMugshot = document.getElementById('raceMugshot');
+    
+            raceSelect.addEventListener('change', function () {
+                raceMugshot.src = `./img/charamugshots/${raceSelect.value}.png`;
+            });
+            // End of Character Mugshots Script
+
+            // Attribute Points Calculation Script
+            // Get numbers inputs
+            const levelNumber = document.getElementById('level');
+
+            const healthNumber = document.getElementById('health');
+            const kiNumber = document.getElementById('ki');
+            const staminaNumber = document.getElementById('stamina');
+            const basicAttackNumber = document.getElementById('basicAttack');
+            const kiBlastSupersNumber = document.getElementById('kiBlastSupers');
+            const strikeSupersNumber = document.getElementById('strikeSupers');
+
+            // Function to update total & available points
+            function updateTotalPoints() {
+                const TotalAPs = 422 / 120 * parseInt(levelNumber.value);
+                document.querySelector('.ApsTotal').textContent = parseInt(TotalAPs);
+                
+                const AvailableAPs = TotalAPs - (parseInt(healthNumber.value) + parseInt(kiNumber.value) + parseInt(staminaNumber.value) + parseInt(basicAttackNumber.value) + parseInt(kiBlastSupersNumber.value) + parseInt(strikeSupersNumber.value));
+                document.querySelector('.ApsAvailable').textContent = parseInt(AvailableAPs);
+            }
+
+            // Event Listeners
+            levelNumber.addEventListener('input', function () {
+                updateTotalPoints(); // To update total points
+            });
+
+            // Tose are to update available points
+            healthNumber.addEventListener('input', function () {
+                updateTotalPoints();
+            });
+            kiNumber.addEventListener('input', function () {
+                updateTotalPoints();
+            });
+            staminaNumber.addEventListener('input', function () {
+                updateTotalPoints();
+            });
+            basicAttackNumber.addEventListener('input', function () {
+                updateTotalPoints();
+            });
+            kiBlastSupersNumber.addEventListener('input', function () {
+                updateTotalPoints();
+            });
+            strikeSupersNumber.addEventListener('input', function () {
+                updateTotalPoints();
+            });
+            // End of Attribute Points Calculation Script
+
+
+        </script>
+        <!-- End of Script JS -->
     </main>
 
     <footer>
