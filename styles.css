@@ -75,6 +75,15 @@ main, .CharacterBuilder {
     }
 }
 
+h4 {
+    text-align: center;
+    font-family: 'Arial', Arial, sans-serif;
+    font-size: 1.6rem;
+    color: #333;
+
+    text-align: center;
+}
+
 h3 {
     text-align: center;
     font-family: 'Haettenschweiler', Arial, sans-serif;

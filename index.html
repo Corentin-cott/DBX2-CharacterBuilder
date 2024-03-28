@@ -86,6 +86,7 @@
             <!-- Character Attributes -->
             <div class="Attributes">
                 <h3>STATISTICS (<span class="ApsAvailable">0</span>/<span class="ApsTotal">0</span> AP LEFT)</h3>
+                <h4><span class="TooMuchAps">You have Attribute Points left</span></h4>
                 <!-- Columns -->
                 <div class="ColumnsContainer">
                     <!-- First Column : Health & Ki -->
@@ -245,7 +246,7 @@
         </div>
         <!-- End of Character builder -->
         <!-- Character Stats Results -->
-        <h2>↓ <span>CHARANAME</span> CHARACTER STATS ↓</h2>
+        <h2>↓ <span class="charaname">CHARANAME</span> CHARACTER STATS ↓</h2>
         <div class="CharacterFinalStats">
             <!-- Statistic -->
             <div class="CharacterStatsPrint">
@@ -324,8 +325,14 @@
 
         <!-- Script JS -->
         <script>
-            // In cas of refresh, update total points
+            // In cas of refresh, update span
+            // AP
             document.addEventListener('DOMContentLoaded', updateTotalPoints);
+            // Name
+            const nameInput = document.getElementById('name');
+            const charaname = document.querySelector('.charaname');
+            charaname.textContent = nameInput.value.toUpperCase();
+            // End of update span
 
             // Character Mugshots Script
             const raceSelect = document.getElementById('raceSelect');
@@ -335,6 +342,12 @@
                 raceMugshot.src = `./img/charamugshots/${raceSelect.value}.png`;
             });
             // End of Character Mugshots Script
+
+            // Character Name Script
+            nameInput.addEventListener('input', function () {
+                charaname.textContent = nameInput.value.toUpperCase();
+            });
+            // End of Character Name Script
 
             // Attribute Points Calculation Script
             // Get numbers inputs
@@ -347,6 +360,51 @@
             const kiBlastSupersNumber = document.getElementById('kiBlastSupers');
             const strikeSupersNumber = document.getElementById('strikeSupers');
 
+            // Keep the total AP >= 0 and AttributesStats <= 200
+            healthNumber.addEventListener('input', function () {
+                if (parseInt(healthNumber.value) < 0) {
+                    healthNumber.value = 0;
+                } else if (parseInt(healthNumber.value) > 200) {
+                    healthNumber.value = 200;
+                }
+            });
+            kiNumber.addEventListener('input', function () {
+                if (parseInt(kiNumber.value) < 0) {
+                    kiNumber.value = 0;
+                } else if (parseInt(kiNumber.value) > 200) {
+                    kiNumber.value = 200;
+                }
+            });
+            staminaNumber.addEventListener('input', function () {
+                if (parseInt(staminaNumber.value) < 0) {
+                    staminaNumber.value = 0;
+                } else if (parseInt(staminaNumber.value) > 200) {
+                    staminaNumber.value = 200;
+                }
+            });
+            basicAttackNumber.addEventListener('input', function () {
+                if (parseInt(basicAttackNumber.value) < 0) {
+                    basicAttackNumber.value = 0;
+                } else if (parseInt(basicAttackNumber.value) > 200) {
+                    basicAttackNumber.value = 200;
+                }
+            });
+            kiBlastSupersNumber.addEventListener('input', function () {
+                if (parseInt(kiBlastSupersNumber.value) < 0) {
+                    kiBlastSupersNumber.value = 0;
+                } else if (parseInt(kiBlastSupersNumber.value) > 200) {
+                    kiBlastSupersNumber.value = 200;
+                }
+            });
+            strikeSupersNumber.addEventListener('input', function () {
+                if (parseInt(strikeSupersNumber.value) < 0) {
+                    strikeSupersNumber.value = 0;
+                } else if (parseInt(strikeSupersNumber.value) > 200) {
+                    strikeSupersNumber.value = 200;
+                }
+            });
+            // End of keep the total AP >= 0 and AttributesStats <= 200
+
             // Function to update total & available points
             function updateTotalPoints() {
                 const TotalAPs = 422 / 120 * parseInt(levelNumber.value);
@@ -354,6 +412,17 @@
                 
                 const AvailableAPs = TotalAPs - (parseInt(healthNumber.value) + parseInt(kiNumber.value) + parseInt(staminaNumber.value) + parseInt(basicAttackNumber.value) + parseInt(kiBlastSupersNumber.value) + parseInt(strikeSupersNumber.value));
                 document.querySelector('.ApsAvailable').textContent = parseInt(AvailableAPs);
+
+                if (parseInt(AvailableAPs) == 0) {
+                    document.querySelector('.TooMuchAps').textContent = "You don't have Attribute Points left";
+                    document.querySelector('.TooMuchAps').style.color = '#ff6600';
+                } else if (AvailableAPs > 0) {
+                    document.querySelector('.TooMuchAps').textContent = 'You have Attribute Points left';
+                    document.querySelector('.TooMuchAps').style.color = '#007700';
+                } else {
+                    document.querySelector('.TooMuchAps').textContent = 'You have put too much Attribute Points!';
+                    document.querySelector('.TooMuchAps').style.color = '#dd0000';
+                }
             }
 
             // Event Listeners
