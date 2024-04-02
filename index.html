@@ -360,6 +360,14 @@
             const kiBlastSupersNumber = document.getElementById('kiBlastSupers');
             const strikeSupersNumber = document.getElementById('strikeSupers');
 
+            // Keep the level >= 1 and <= 120
+            levelNumber.addEventListener('input', function () {
+                if (parseInt(levelNumber.value) < 1) {
+                    levelNumber.value = 1;
+                } else if (parseInt(levelNumber.value) > 120) {
+                    levelNumber.value = 120;
+                }
+            });
             // Keep the total AP >= 0 and AttributesStats <= 200
             healthNumber.addEventListener('input', function () {
                 if (parseInt(healthNumber.value) < 0) {
@@ -407,7 +415,22 @@
 
             // Function to update total & available points
             function updateTotalPoints() {
-                const TotalAPs = 422 / 120 * parseInt(levelNumber.value);
+                // Soon old formula, used for now, placeolder
+                    const TotalAPs = 422 / 120 * parseInt(levelNumber.value);
+
+                // Soon new formula, to be used later on
+                    // Level 1 (you start here) - No points
+                    // Level 2 - 2 points
+                    // Level 3 to 19 - 3 points
+                    // Level 20 to 34 - 4 points
+                    // Level 35 to 45 - 5 points
+                    // Level 46 to 50 - 6 points
+                    // Level 51 to 54 - 7 points
+                    // Level 55 to 59 - 6 points
+                    // Level 60 to 62 - 5 points
+                    // Level 63 to 67 - 4 points
+                    // Level 68 to 80 - 3 points
+
                 document.querySelector('.ApsTotal').textContent = parseInt(TotalAPs);
                 
                 const AvailableAPs = TotalAPs - (parseInt(healthNumber.value) + parseInt(kiNumber.value) + parseInt(staminaNumber.value) + parseInt(basicAttackNumber.value) + parseInt(kiBlastSupersNumber.value) + parseInt(strikeSupersNumber.value));
