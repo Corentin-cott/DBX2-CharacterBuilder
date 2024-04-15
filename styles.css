@@ -147,6 +147,23 @@ h2 {
     }
 }
 
+li a {
+    color: #333;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: darkorange;
+}
+
+p, li {
+    font-family: 'Arial', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+
+    margin-left: 25%; margin-right: 25%;
+}
+
 img {
     width: 200px;
     filter: drop-shadow(2px 2px 2px black);
