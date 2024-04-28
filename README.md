@@ -10,6 +10,8 @@ Alias : "*Dragon Ball Xenoverse 2 - Character builder*" or "*DBX2-CB*"
 
 # Introduction
 
+**Based on this [calculator](https://docs.google.com/spreadsheets/d/1-X0USOizFtgXmY4Gks8fyA3jB9AeWGxVcmESNkA4lH8/edit#gid=857748813), created by exxod on discord!**
+
 The [Dragon Ball Xenoverse 2 Character builder](https://dbx2-cb.online), or [dbx2-cb](https://dbx2-cb.online), is a website that can calculate the statistics of a xenoverse 2 character with their attributes, super soul and QQBang.
 
 You can input your character's race, height, weight, and name. Then your attributes, QQBang and Super soul.
@@ -19,8 +21,10 @@ The website will compute your final statistics, the appoximate damage that you s
 # Screenshots
 
 Here's some screenshots :
-<div align="center">
-  <img src="-" width="200" />
+<div align="left">
+  <img src="https://github.com/Corentin-cott/DBX2-CharacterBuilder/assets/109530954/07d39576-c381-463c-8375-1bed2910f428" width="600" />
+  <br>
+  <img src="https://github.com/Corentin-cott/DBX2-CharacterBuilder/assets/109530954/b68f45b4-f34a-4a66-b443-de4b40aac197" width="600" />
 </div>
 
 # Authors
