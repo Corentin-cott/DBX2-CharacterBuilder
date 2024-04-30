@@ -1,6 +1,6 @@
 // In cas of refresh, update span
 // AP
-document.addEventListener("DOMContentLoaded", function () {updateTotalPoints(); calculateFinalHealth();});
+document.addEventListener("DOMContentLoaded", function () {updateTotalPoints(); calculateAllFinalStats();});
 // Name
 const nameInput = document.getElementById("name");
 const charaname = document.querySelector(".charaname");
@@ -177,6 +177,7 @@ calculateStatsButton.addEventListener("click", function () {
 
 // Final Stats input getters
 const heightSelect = document.getElementById("height");
+const weightSelect = document.getElementById("weight");
 
 const healthFinalNumber = document.getElementById("finalHealth");
 const kiFinalNumber = document.getElementById("finalKi");
@@ -191,7 +192,7 @@ const strikeSupersFinalNumber = document.getElementById("finalStrikeSupers");
 const healthBase = 20250;
 const kiAndStaminaBase = 500;
 const kiAndStaminaAPConstant = 2.4;
-const kiAndStaminaClothingConstant = 2.4;
+const kiAndStaminaClothingConstant = 10;
 const APsConstant = 30;
 const clothingConstant = 75;
 // Race constants and coefficients
@@ -214,29 +215,29 @@ const tallCoef = 3;
 const tallestCoef = 4;
 // End of fix values
 
-// Health Final Stat calculation
-// Get race coefficient
+// Get coefficients
+// Race coefficient
 function getRaceCoef(race) {
-    if (race === "Frieza") {
+    if (race === "frizea") {
         return friezaCoef;
-    } else if (race === "Majin (F)") {
+    } else if (race === "f_majin") {
         return femaleMajinCoef;
-    } else if (race === "Saiyan (F)") {
+    } else if (race === "f_saiyan") {
         return femaleSaiyanCoef;
-    } else if (race === "Saiyan (M)") {
+    } else if (race === "m_saiyan") {
         return maleSaiyanCoef;
-    } else if (race === "Earthling (F)") {
+    } else if (race === "f_earthling") {
         return femaleEarthlingCoef;
-    } else if (race === "Earthling (M)") {
+    } else if (race === "m_earthling") {
         return maleEarthlingCoef;
-    } else if (race === "Namekian") {
+    } else if (race === "namek") {
         return namekianCoef;
-    } else if (race === "Majin (M)") {
+    } else if (race === "m_majin") {
         return maleMajinCoef;
     }
     return 0;
 }
-// Get height coefficient
+// Height coefficient
 function getRaceHeightCoef(height) {
     if (height === "Shortest") {
         return shortestCoef;
@@ -249,9 +250,57 @@ function getRaceHeightCoef(height) {
     }
     return 0;
 }
+// End of "Get coefficients"
+
 // Calculate Final Health function
 function calculateFinalHealth() {
     const FinalHealth = healthBase + getRaceCoef(raceSelect.value) * raceConstant + getRaceHeightCoef(heightSelect.value) * heightConstant + healthNumber.value * APsConstant + 0 /* clothing, not implemented yet */ * clothingConstant;
     healthFinalNumber.value = parseInt(FinalHealth);
 }
 // End of Health Final Stat calculation
+
+// Calculate Final Ki function
+function calculateFinalKi() {
+    const FinalKi = kiAndStaminaBase + kiNumber.value * kiAndStaminaAPConstant + 0 /* clothing, not implemented yet */ * kiAndStaminaClothingConstant;
+    kiFinalNumber.value = parseInt(FinalKi);
+}
+// End of Ki Final Stat calculation
+
+// Calculate Final Stamina function
+function calculateFinalStamina() {
+    const FinalStamina = kiAndStaminaBase + staminaNumber.value * kiAndStaminaAPConstant + 0 /* clothing, not implemented yet */ * kiAndStaminaClothingConstant;
+    staminaFinalNumber.value = parseInt(FinalStamina);
+}
+// End of Stamina Final Stat calculation
+
+// Calculate Final Basic Attack function
+function calculateFinalBasicAttack() {
+    const FinalBasicAttack = 5;
+    basicAttackFinalNumber.value = parseInt(FinalBasicAttack);
+}
+// End of Basic Attack Final Stat calculation
+
+// Calculate Final Ki Blast Supers function
+function calculateFinalKiBlastSupers() {
+    const FinalKiBlastSupers = 5;
+    kiBlastSupersFinalNumber.value = parseInt(FinalKiBlastSupers);
+}
+// End of Ki Blast Supers Final Stat calculation
+
+// Calculate Final Strike Supers function
+function calculateFinalStrikeSupers() {
+    const FinalStrikeSupers = 5;
+    strikeSupersFinalNumber.value = parseInt(FinalStrikeSupers);
+}
+// End of Strike Supers Final Stat calculation
+
+// Calculate All Final Stats function
+function calculateAllFinalStats() {
+    calculateFinalHealth();
+    calculateFinalKi();
+    calculateFinalStamina();
+    calculateFinalBasicAttack();
+    calculateFinalKiBlastSupers();
+    calculateFinalStrikeSupers();
+}
+// End of "All Final Stats calculation"
