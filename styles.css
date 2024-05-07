@@ -66,6 +66,15 @@ h1 {
 /* End of CSS for the header */
 
 /* CSS for the main content */
+.BarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+
+
 main, .CharacterBuilder {
     padding-bottom: 4.5rem;
 }

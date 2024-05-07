@@ -171,7 +171,7 @@ strikeSupersNumber.addEventListener("input", function () {
 // Button script
 const calculateStatsButton = document.getElementById("calculateButton");
 calculateStatsButton.addEventListener("click", function () {
-    calculateFinalHealth();
+  calculateAllFinalStats();
 });
 // End of Calculate Stats Script
 
@@ -179,12 +179,12 @@ calculateStatsButton.addEventListener("click", function () {
 const heightSelect = document.getElementById("height");
 const weightSelect = document.getElementById("weight");
 
-const healthFinalNumber = document.getElementById("finalHealth");
-const kiFinalNumber = document.getElementById("finalKi");
-const staminaFinalNumber = document.getElementById("finalStamina");
-const basicAttackFinalNumber = document.getElementById("finalBasicAttack");
-const kiBlastSupersFinalNumber = document.getElementById("finalKiBlastSupers");
-const strikeSupersFinalNumber = document.getElementById("finalStrikeSupers");
+var healthFinalNumber = document.getElementById("finalHealth");
+var kiFinalNumber = document.getElementById("finalKi");
+var staminaFinalNumber = document.getElementById("finalStamina");
+var basicAttackFinalNumber = document.getElementById("finalBasicAttack");
+var kiBlastSupersFinalNumber = document.getElementById("finalKiBlastSupers");
+var strikeSupersFinalNumber = document.getElementById("finalStrikeSupers");
 // End of Final Stats input getters
 
 // Fist some fix values
@@ -197,7 +197,6 @@ const APsConstant = 30;
 const clothingConstant = 75;
 // Race constants and coefficients
 const raceConstant = 375;
-
 const friezaCoef = 0;
 const femaleMajinCoef = 0;
 const femaleSaiyanCoef = 0;
@@ -208,7 +207,6 @@ const namekianCoef = 7;
 const maleMajinCoef = 8;
 // Height constants and coefficients
 const heightConstant = 375;
-
 const shortestCoef = 0;
 const shortCoef = 1;
 const tallCoef = 3;
@@ -254,43 +252,49 @@ function getRaceHeightCoef(height) {
 
 // Calculate Final Health function
 function calculateFinalHealth() {
-    const FinalHealth = healthBase + getRaceCoef(raceSelect.value) * raceConstant + getRaceHeightCoef(heightSelect.value) * heightConstant + healthNumber.value * APsConstant + 0 /* clothing, not implemented yet */ * clothingConstant;
-    healthFinalNumber.value = parseInt(FinalHealth);
+  var FinalHealth = 0;
+  FinalHealth = healthBase + getRaceCoef(raceSelect.value) * raceConstant + getRaceHeightCoef(heightSelect.value) * heightConstant + healthNumber.value * APsConstant + 0 /* clothing, not implemented yet */ * clothingConstant;
+  healthFinalNumber.value = parseInt(FinalHealth);
 }
 // End of Health Final Stat calculation
 
 // Calculate Final Ki function
 function calculateFinalKi() {
-    const FinalKi = kiAndStaminaBase + kiNumber.value * kiAndStaminaAPConstant + 0 /* clothing, not implemented yet */ * kiAndStaminaClothingConstant;
-    kiFinalNumber.value = parseInt(FinalKi);
+  var FinalKi = 0;
+  FinalKi = kiAndStaminaBase + kiNumber.value * kiAndStaminaAPConstant + 0 /* clothing, not implemented yet */ * kiAndStaminaClothingConstant;
+  kiFinalNumber.value = parseInt(FinalKi);
 }
 // End of Ki Final Stat calculation
 
 // Calculate Final Stamina function
 function calculateFinalStamina() {
-    const FinalStamina = kiAndStaminaBase + staminaNumber.value * kiAndStaminaAPConstant + 0 /* clothing, not implemented yet */ * kiAndStaminaClothingConstant;
-    staminaFinalNumber.value = parseInt(FinalStamina);
+  var FinalStamina = 0;
+  FinalStamina = kiAndStaminaBase + staminaNumber.value * kiAndStaminaAPConstant + 0 /* clothing, not implemented yet */ * kiAndStaminaClothingConstant;
+  staminaFinalNumber.value = parseInt(FinalStamina);
 }
 // End of Stamina Final Stat calculation
 
 // Calculate Final Basic Attack function
 function calculateFinalBasicAttack() {
-    const FinalBasicAttack = 5;
-    basicAttackFinalNumber.value = parseInt(FinalBasicAttack);
+  var FinalBasicAttack = 0;
+  FinalBasicAttack = 5;
+  basicAttackFinalNumber.value = parseInt(FinalBasicAttack);
 }
 // End of Basic Attack Final Stat calculation
 
 // Calculate Final Ki Blast Supers function
 function calculateFinalKiBlastSupers() {
-    const FinalKiBlastSupers = 5;
-    kiBlastSupersFinalNumber.value = parseInt(FinalKiBlastSupers);
+  var FinalKiBlastSupers = 0;
+  FinalKiBlastSupers = 5;
+  kiBlastSupersFinalNumber.value = parseInt(FinalKiBlastSupers);
 }
 // End of Ki Blast Supers Final Stat calculation
 
 // Calculate Final Strike Supers function
 function calculateFinalStrikeSupers() {
-    const FinalStrikeSupers = 5;
-    strikeSupersFinalNumber.value = parseInt(FinalStrikeSupers);
+  var FinalStrikeSupers = 0;
+  FinalStrikeSupers = 5;
+  strikeSupersFinalNumber.value = parseInt(FinalStrikeSupers);
 }
 // End of Strike Supers Final Stat calculation
 
