@@ -6,7 +6,7 @@ Alias : "*Dragon Ball Xenoverse 2 - Character builder*" or "*DBX2-CB*"
 
 - [Introduction](#introduction)
 - [Screenshots](#screenshots)
-- [Development Status](#development)
+- [Status](#status)
 - [Authors](#authors)
 
 # Introduction
@@ -28,7 +28,7 @@ Here's some screenshots :
   <img src="https://github.com/Corentin-cott/DBX2-CharacterBuilder/assets/109530954/b68f45b4-f34a-4a66-b443-de4b40aac197" width="600" />
 </div>
 
-# Development Status
+# Status
 The site is down and on a long pause. With work (and Dragon Ball Sparking Zero 😎), I've lost interest in Xenoverse 2 and this project.
 That being said... I wouldn't say I will never get back to it ! But just don't expect it to come out anytime soon.
 
