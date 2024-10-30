@@ -6,7 +6,7 @@ Alias : "*Dragon Ball Xenoverse 2 - Character builder*" or "*DBX2-CB*"
 
 - [Introduction](#introduction)
 - [Screenshots](#screenshots)
-- [Development Status](#status)
+- [Development Status](#development)
 - [Authors](#authors)
 
 # Introduction
